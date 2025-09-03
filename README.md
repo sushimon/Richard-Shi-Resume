@@ -1,0 +1,30 @@
+# Kyle's Resume Template
+
+A standard one page resume template for Engineering/ computer science/ tech roles. Built with github action workflows to ensure most recent resume version is always available on the cloud.
+
+Adapted from https://github.com/jakegut/resume
+
+### Setup
+
+1. Install texlive-latex-recommended
+
+**Ubuntu**:  
+`sudo apt update`  
+`sudo apt install texlive-latex-recommended`
+
+2. Fork Repo. You might want to make your fork private
+
+3. Update `MY_NAME` to yours in `.github\workflows\build_PDFs.yml`
+
+4. Edit all other files as needed
+
+
+### Usage
+
+Push changes to github to update PDFs. The most recent PDF will be on github for download or sharing  
+
+To tailor applications for each role, make a new branch and push changes there.   
+
+`git checkout -b new_branch`  
+
+Your standard resume and cover letter will remain untouched and you can access the modified resume by switching branches
