@@ -23,7 +23,7 @@ Adapted from https://github.com/jakegut/resume
 
 Push changes to github to update PDFs. The most recent PDF will be on github for download or sharing  
 
-To tailor applications for each role, make a new branch and push changes there.   
+** Want to tailor your resume for each role?** To do so, make a new branch for each position and push changes there. You can switch between versions easily, without having to worry about clunky naming ("firstname_lastname_resume_meta_v2-1.pdf" no longer!)  
 
 `git checkout -b new_branch`  
 
