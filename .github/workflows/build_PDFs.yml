@@ -28,7 +28,7 @@ jobs:
           file=`basename $f .$ext`
           mv "$file.pdf" "${{env.MY_NAME}}_$file.pdf"
         done
-        gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=${{env.MY_NAME}}_application.pdf *.pdf
+        gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=${{env.MY_NAME}}_application.pdf ${{env.MY_NAME}}_*.pdf
 
 
     - name: List files in docs directory
