@@ -1,9 +1,17 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
 \documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
-\usepackage[margin=1in]{geometry}
+\usepackage[empty]{fullpage}
 \usepackage{titlesec}
 \usepackage{marvosym}
+\usepackage{graphicx}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
@@ -11,7 +19,6 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
-\usepackage{amsmath}
 \input{glyphtounicode}
 
 
@@ -32,11 +39,12 @@
 \fancyfoot{}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
+\newcommand{\plus}{\raisebox{.4\height}{\scalebox{.6}{+}}}
 
 % Adjust margins
 \addtolength{\oddsidemargin}{-0.5in}
 \addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in} 
+\addtolength{\textwidth}{1in}
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
 
@@ -62,17 +70,11 @@
   }
 }
 
-\newcommand{\boldResumeItem}[1]{
-  \item\small{
-    \textbf{#1 \vspace{-2pt}}
-  }
-}
-
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \small#3 & \small #4 \\
+      \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -95,100 +97,182 @@
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-9pt}}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 \begin{document}
 
 %----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
 
 \begin{center}
-    \textbf{\Huge \scshape Firstname Lastname} \\ \vspace{1pt}
-    \small (XXX) XXX-XXXX $|$ \href{mailto:anon@example.com}{\underline{anon@example.com}} $|$ 
-    \href{https://www.linkedin.com/in/placeholder}{\underline{linkedin.com/in/placeholder}} $|$
-    \href{https://github.com/placeholder}{\underline{github.com/placeholder}}
+    \textbf{\Huge \scshape Richard Shi} \\ \vspace{1pt}
+    \small 416-505-6058 $|$ \href{mailto:richard.540102@gmail.com}{\underline{richard.540102@gmail.com}} $|$ 
+    \href{https://www.linkedin.com/in/shi-richard/}{\underline{linkedin.com/in/shi-richard}} $|$
+    \href{https://github.com/sushimon}{\underline{github.com/sushimon}}
+    % $|$ {Available May-Sept. 2024} 
+    $|$ \href{https://sushimon.github.io/}{\underline{sushimon.github.io/}}
 \end{center}
-
-%-----------Summary-----------
-\section{Professional Summary}
-\centering\small
-Brief professional summary goes here. Highlight key skills, areas of expertise, and career goals. Keep this section concise and focus on strengths.
-\vspace{-9pt}
 
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
     \resumeSubheading
-      {University Name}{Expected YYYY}
-      {Degree Program, Field of Study}{City, Country}
-       \resumeItemListStart
-        \resumeItem{Notable scholarship, award, or distinction}
-      \resumeItemListEnd
+    {University of Toronto}{Toronto, ON}
+    {Master of Science in Applied Computing, AI Concentration}{Sep. 2025 -- Dec. 2026}
+    % \resumeItemListStart
+    %     \resumeItem{hi}
+    % \resumeItemListEnd
+  
     \resumeSubheading
-      {University Name}{YYYY}
-      {Bachelor’s Degree, Minor Subject $|$ GPA: X.X/X.X}{City, Country}
+      {University of Toronto}{Toronto, ON}
+      {Honours Bachelor of Science, Computer Science Specialist, Mathematics Minor}{Sep. 2021 -- June 2025}
+      \resumeItemListStart
+        \resumeItem{CGPA: 3.98/4.0}
+        \resumeItem{Relevant Coursework: Computer Architecture, Intro to AI, Nonlinear Optimization, Intro to ML, Operating Systems, Computer Graphics, Intro to Image Understanding, NLP, Neural Networks \& Deep Learning}
+        % \resumeItem{Relevant Coursework: Software Tools \& Systems Programming, Data Structures \& Algorithms, Computer Architecture, Intro to AI, Nonlinear Optimization, Intro to ML, Intro to Databases, Computer Organization, Operating Systems, Computer Graphics, Intro to Image Understanding, NLP, Neural Networks \& Deep Learning}
+        % \resumeItem{Awards: Dean's List Scholar (2022 -- 2024), University of Toronto Excellence Award (2024), President's Scholar of Excellence (2021)}
+      \resumeItemListEnd
   \resumeSubHeadingListEnd
 
-%-----------SKILLS-----------
-\section{Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
-    \small{\item{
-     \textbf{Languages}{: Python, C/C++, SQL} \\
-     \textbf{Tools \& Libraries}{: Machine Learning Libraries, Data Processing Tools, Cloud Platforms, Visualization Software}}}
- \end{itemize}\vspace{-14pt}
+%-----------AWARDS--------------
+\section{Awards}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Dean's List Scholar}}{2022 -- 2025}
+  \resumeProjectHeading
+      {\textbf{University of Toronto Excellence Award}}{2024}
+    \resumeProjectHeading
+      {\textbf{President's Scholar of Excellence}}{2021}
+  \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
-    \resumeSubheading
-      {Job Title}{MMM YYYY -- MMM YYYY}
-      {Company / Organization}{City, Country}
-      \resumeItemListStart
-        \resumeItem{Developed and maintained applications using modern frameworks and tools}
-        \resumeItem{Collaborated with team members to design and deliver solutions}
-        \resumeItem{Contributed to project planning, testing, and deployment}
-      \resumeItemListEnd
-      
-    \resumeSubheading
-      {Job Title}{MMM YYYY -- MMM YYYY}
-      {Company / Organization}{City, Country}
-      \resumeItemListStart
-        \resumeItem{Analyzed datasets to extract insights and support decision-making}
-        \resumeItem{Built and validated models for predictive analytics}
-        \resumeItem{Presented results and recommendations to stakeholders}
-    \resumeItemListEnd
+
+% -----------Multiple Positions Heading-----------
+% \resumeSubheading
+%       {Grade Representative, Student Administrative Council}{Sept. 2017 -- June 2020}
+%       {Dr. Norman Bethune Collegiate Institute}{Toronto, ON}
+%       \resumeItemListStart
+%         \resumeItem{Communicated with the student body to voice their opinions on school life and the community to create a more enjoyable high school experience}
+%         \resumeItem{Planned and executed school events such as the Annual Talent Show and Semi-Formal for 500{\plus} students to foster school spirit}
+%       \resumeItemListEnd
+%-------------------------------------------
 
     \resumeSubheading
-      {Job Title}{MMM YYYY -- MMM YYYY}
-      {Company / Organization}{City, Country}
+      {Undergraduate Mathematics Teaching Assistant}{Sept. 2023 -- Apr. 2024, Sept. 2024 -- Apr. 2025}
+      {Department of Mathematics, University of Toronto}{Toronto, ON}
       \resumeItemListStart
-        \resumeItem{Designed and implemented tools to improve workflow efficiency}
-        \resumeItem{Automated data processing tasks using scripting and SQL pipelines}
-        \resumeItem{Documented processes and shared findings with leadership}
+        \resumeItem{Led tutorial sessions of 50 students and facilitated group work and discussions to help students develop a deeper understanding on lecture topics}
+        \resumeItem{Offered support during office hours to help students clear up any confusion they have about the material}
+        \resumeItem{Graded student tests and assignments and provided detailed feedback to highlight areas for improvement}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Undergraduate Research Assistant}{May 2024 -- Sept. 2024}
+      {SysNet Research Group, University of Toronto}{Toronto, ON}
+      \resumeItemListStart
+        \resumeItem{Working under Prof. Gururaj Saileshwar on "Balancing Privacy and Performance in Secure Federated Learning"}
+        \resumeItem{Developed a client-side pruning technique for straggler mitigation that maintains accuracy of state-of-the-art solutions while also providing additional privacy}
+        \resumeItem{Utilized Flower, a federated learning framework, to conduct experiments for quantifying the effects of our naïve and intelligent pruning solution on compute and network bottlenecks}
+        \resumeItem{Created and delivered a presentation summarizing our research at the University of Toronto Department of Computer Science's Summer Research Poster Showcase 2024}
+      \resumeItemListEnd
+
+   \resumeSubheading
+    {Software Developer}{Jan. 2023 - Sept. 2023}
+    {Students Developing Software Team, University of Toronto}{Toronto, ON}
+    \resumeItemListStart
+       \resumeItem{Worked under the supervision of Professor David Liu on PythonTA, a Python static code analysis tool that helps thousands of students taking introductory Python courses identify and fix common errors}
+       \resumeItem{Incorporated advanced Git features into daily workflow, enabling the completion of 25 tasks through two semesters}
+       \resumeItem{Developed new features with Python relating to configuration, designing an API, static code analysis, and control flow graphs to provide users with more tools for educational use}
+       % \resumeItem{Writing custom abstract syntax tree checkers to check and report on errors and style warnings}
+       % \resumeItem{Augmenting existing control flow graph classes to be more suitable for educational use}
     \resumeItemListEnd
-  \resumeSubHeadingListEnd
+
+    % \resumeSubheading
+    %   {App Developer}{Jun. 2022 -- Sep. 2022}
+    %   {Felicity App}{Toronto, ON}
+    %   \resumeItemListStart
+    %     \resumeItem{Developed reusable front-end components using React Native, easing the creation of future mobile screens}
+    %     \resumeItem{Collaborated in a team of eight developers to launch the first iteration of a productivity mobile application that utilizes research-based interventions}
+    %   \resumeItemListEnd
+
+    % \resumeSubheading
+    %   {Team Lead, Computer Science Club}{Oct. 2020 -- Jun. 2021}
+    %   {Dr. Norman Bethune Collegiate Institute}{Toronto, ON}
+    %   \resumeItemListStart
+    %     \resumeItem{Managed a group of four student instructors to educate peers about computer science related topics in preparation for programming competitions}
+    %     \resumeItem{Organized a university panel with current computer science students for over 90 attendees to provide insight into post-secondary life and computer science related opportunities}
+    % \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
 
 %-----------PROJECTS-----------
 \section{Projects}
     \resumeSubHeadingListStart
       \resumeProjectHeading
-          {\textbf{Project Name} $|$ \emph{Technologies Used}}{MMM YYYY -- MMM YYYY}
-          \resumeItemListStart
-            \resumeItem{Description of project goals and contributions}
-            \resumeItem{Key technical challenges and solutions implemented}
-            \resumeItem{Results achieved or impact created}
-          \resumeItemListEnd
+        {\textbf{UofTeams} $|$
+        \href{https://github.com/CSC207-2022F-UofT/course-project-uofteams}{\underline{Link}}}{Oct. 2022 -- Dec. 2022}
+        \resumeItemListStart
+            \resumeItem{Developed the filter and viewing post functionality of a forum app aiming to promote extracurricular opportunities}
+            \resumeItem{Designed the app with knowledge of SOLID design principles, Clean Architecture and common design patterns}
+            \resumeItem{Collaborated with six students to design and implement a Java-based app using a basic Git workflow}
+        \resumeItemListEnd
+      % \resumeProjectHeading
+      %     {\textbf{Climate Model Visualization} $|$ \href{https://github.com/sushimon/CSC110-Final-Project}{\underline{Link}}}{Dec. 2021}
+      %     \resumeItemListStart
+      %       \resumeItem{Developed an app using Python to explore the effects of COVID-19 on greenhouse gas emissions and the climate}
+      %       \resumeItem{Implemented a GUI using the Tkinter library to enable the user to customize the data displayed on the graphs}
+      %       \resumeItem{Utilized the plotly library to visualize the results of the climate model}
+      %     \resumeItemListEnd
       \resumeProjectHeading
-          {\textbf{Project Name} $|$ \emph{Technologies Used}}{MMM YYYY -- MMM YYYY}
+          {\textbf{PokeStack} $|$ \href{https://github.com/sushimon/PokeStack}{\underline{Link}}}{Jul. 2021}
           \resumeItemListStart
-            \resumeItem{Description of project goals and contributions}
-            \resumeItem{Key technical challenges and solutions implemented}
-            \resumeItem{Results achieved or impact created}
+            \resumeItem{Developed a desktop app using Python to help Pokémon GO trainers record the species of pokémon stored in their research stack}
+            \resumeItem{Implemented a GUI using the Tkinter library for users to maintain a database of encountered pokemon}
           \resumeItemListEnd
     \resumeSubHeadingListEnd
 
+%----------SKILLS AND INTERESTS----------
+\section{Skills} % \& Interests}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Skills:}{ Python, Java, Golang, Haskell, Racket, JavaScript, R, C, C++, Assembly, React Native, pytest, NumPy, SciPy,
+scikit-learn, Flower, TensorFlow, PyTorch, plotly, PostgreSQL, Git, problem solving, strong work ethic, eager to learn} \\
+     %\textbf{Interests:}{ Volleyball, real analysis, Pokémon, Star Wars, artificial intelligence, Yu-Gi-Oh!, symbolic logic} 
+    }}
+ \end{itemize}
+
+%-----------PROGRAMMING SKILLS-----------
+% \section{Technical Skills}
+%  \begin{itemize}[leftmargin=0.15in, label={}]
+%     \small{\item{
+%      \textbf{Languages}{: Python, Java, JavaScript, R, HTML, C, Assembly} \\
+%      \textbf{Frameworks/Libraries}{: React Native, plotly, Tkinter, Pylint, astroid} \\
+%      \textbf{Developer Tools}{: Git, VS Code, PyCharm, IntelliJ IDEA, Vim} 
+%     }}
+%  \end{itemize}
+ 
+%----------ACHIEVEMENTS------------
+% \section{Achievements}
+%     \resumeSubHeadingListStart
+%         \resumeProjectHeading
+%             {\textbf{University of Toronto Dean's List Scholar}}{Jun. 2022 -- 2023}
+%         \resumeProjectHeading
+%             {\textbf{Bethune Scholar Certificate (90\%{\plus} average)}}{Jul. 2018 -- 2021}
+%         \resumeProjectHeading
+%             {\textbf{Grade 12 Computer Science Award}}{Jul. 2021}
+%     \resumeSubHeadingListEnd
+
+%-------------------------------------------
 \end{document}

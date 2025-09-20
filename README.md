@@ -1,8 +1,6 @@
-# Kyle's Resume Template
+# Richard Shi's Resume
 
-A standard one page resume template for Engineering/ computer science/ tech roles. Built with github action workflows to ensure most recent resume version is always available on the cloud.
-
-Adapted from https://github.com/jakegut/resume
+Based off of: https://github.com/sb2nov/resume
 
 ### Setup
 

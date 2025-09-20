@@ -6,7 +6,7 @@ on:
       - '*'
 
 env:
-  MY_NAME: "firstname_lastname"
+  MY_NAME: "Richard_Shi"
 
 jobs:
   build_latex:
