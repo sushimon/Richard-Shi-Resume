@@ -19,16 +19,17 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v3
       
-    - name: Build PDFs and resume JPGs
+    - name: Build PDFs and resume screenshot
       run: |
-        apt-get install -y texlive-latex-recommended ghostscript
+        apt-get install -y texlive-latex-recommended imagemagick
         latexmk -pdf *.tex 
         for f in *.tex; do
           ext=${f##*.}
           file=`basename $f .$ext`
           mv "$file.pdf" "${{env.MY_NAME}}_$file.pdf"
         done
-        gs -sDEVICE=jpeg -o "${{env.MY_NAME}}_resume.jpg" "${{env.MY_NAME}}_resume.pdf"
+        cp "${{env.MY_NAME}}_resume.pdf" "${{env.MY_NAME}}_resume_pic.pdf"
+        convert "${{env.MY_NAME}}_resume_pic.pdf" "${{env.MY_NAME}}_resume.png"
 
     - name: List files in docs directory
       run: ls -R
@@ -47,10 +48,10 @@ jobs:
     - name: List tracked files
       run: git ls-files
 
-    - name: Force add PDFs and JPGs
+    - name: Force add PDFs and PNGs
       run: |
         git add -f *.pdf
-        git add -f *.jpg
+        git add -f *.png
         git status
 
     - name: Commit and push updated PDFs
