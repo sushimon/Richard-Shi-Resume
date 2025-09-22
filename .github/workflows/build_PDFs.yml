@@ -19,7 +19,7 @@ jobs:
     - name: Checkout repo
       uses: actions/checkout@v3
       
-    - name: Build PDFs
+    - name: Build PDFs and resume JPGs
       run: |
         apt-get install -y texlive-latex-recommended ghostscript
         latexmk -pdf *.tex 
@@ -28,8 +28,7 @@ jobs:
           file=`basename $f .$ext`
           mv "$file.pdf" "${{env.MY_NAME}}_$file.pdf"
         done
-        gs -dBATCH -dNOPAUSE -q -sDEVICE=pdfwrite -sOutputFile=${{env.MY_NAME}}_application.pdf ${{env.MY_NAME}}_*.pdf
-
+        gs -sDEVICE=jpeg -o "${{env.MY_NAME}}_resume.jpg" "${{env.MY_NAME}}_resume.pdf"
 
     - name: List files in docs directory
       run: ls -R
@@ -48,14 +47,15 @@ jobs:
     - name: List tracked files
       run: git ls-files
 
-    - name: Force add PDFs
+    - name: Force add PDFs and JPGs
       run: |
         git add -f *.pdf
+        git add -f *.jpg
         git status
 
     - name: Commit and push updated PDFs
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        git commit -m "Update generated PDFs" || echo "No changes to commit"
+        git commit -m "Update generated PDFs and resume JPG" || echo "No changes to commit"
         git push
