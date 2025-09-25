@@ -28,7 +28,7 @@ jobs:
           file=`basename $f .$ext`
           mv "$file.pdf" "${{env.MY_NAME}}_$file.pdf"
         done
-        gs -dNOPAUSE -sDEVICE=png16m -r600 -sOutputFile="${{env.MY_NAME}}_resume.png" "${{env.MY_NAME}}_resume.pdf" -dBATCH
+        gs -dNOPAUSE -sDEVICE=png16m -r600 -sOutputFile="${{env.MY_NAME}}_Resume.png" "${{env.MY_NAME}}_Resume.pdf" -dBATCH
 
     - name: List files in docs directory
       run: ls -R
